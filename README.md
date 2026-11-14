@@ -35,3 +35,16 @@ Bayes-Climate (INLA), TCN, TimeGPT, ensambles, WorldClim/SPI-6, WIS/cuantiles. L
 
 ## Resultados
 Ver `results/comparacion_con_mills.csv`.
+
+## Clonar
+mkdir prueba
+cd prueba
+git clone  https://github.com/PatinoCruzado/replica-mills-dengue
+cd replica-mills-dengue
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+cd src
+Measure-Command { python 02_preprocesamiento.py }
+Measure-Command { python 03_modelos.py }
+python 04_evaluacion.py
