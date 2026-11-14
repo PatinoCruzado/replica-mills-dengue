@@ -36,25 +36,16 @@ Bayes-Climate (INLA), TCN, TimeGPT, ensambles, WorldClim/SPI-6, WIS/cuantiles. L
 ## Resultados
 Ver `results/comparacion_con_mills.csv`.
 
-## Clonar y ejecutar (Windows PowerShell)
+## Clonar y ejecutar
 
-1. Crear una carpeta de trabajo y entrar en ella:
-   mkdir prueba
-   cd prueba
-
-2. Clonar el repositorio y entrar en él:
-   git clone https://github.com/PatinoCruzado/replica-mills-dengue
-   cd replica-mills-dengue
-
-3. Crear y activar el entorno virtual:
-   python -m venv .venv
-   .venv\Scripts\activate
-
-4. Instalar las dependencias:
-   pip install -r requirements.txt
-   cd src
-
-6. Ejecutar el pipeline:
-   Measure-Command { python 02_preprocesamiento.py }
-   Measure-Command { python 03_modelos.py }
-   python 04_evaluacion.py
+```bash
+git clone https://github.com/PatinoCruzado/replica-mills-dengue
+cd replica-mills-dengue
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cd src
+python 01_descarga.py          # opcional (ONI/ICEN)
+python 02_preprocesamiento.py
+python 03_modelos.py
+python 04_evaluacion.py
+```
