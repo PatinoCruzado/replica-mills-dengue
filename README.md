@@ -38,10 +38,13 @@ Ver `results/comparacion_con_mills.csv`.
 
 ## Clonar y ejecutar
 
-```bash
+## Clonar y ejecutar (Windows PowerShell)
+
+```powershell
 git clone https://github.com/PatinoCruzado/replica-mills-dengue
 cd replica-mills-dengue
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 cd src
 python 01_descarga.py          # opcional (ONI/ICEN)
